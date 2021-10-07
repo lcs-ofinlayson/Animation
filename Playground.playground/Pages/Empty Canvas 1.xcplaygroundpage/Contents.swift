@@ -45,8 +45,7 @@ canvas.translate(to: Point(x: canvas.width / 2,
                            y: canvas.height / 2))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
-
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 /*:
  ## Add your code
  
@@ -58,20 +57,24 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// make the fill white and a black boarder
+canvas.fillColor = .white
+canvas.drawShapesWithBorders = true
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
+//Draw right eye
+canvas.drawEllipse(at: Point(x: 20, y: 15), width: 20, height: 40)
+//Draw left eye
+canvas.drawEllipse(at: Point(x: -20, y: 15), width: 20, height: 40)
 
-// Go back to origin
-p.goToOrigin()
+//Draw right pupil
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: 20, y: 0), width: 10, height: 10)
+//Draw left pupil
+canvas.fillColor = .black
+canvas.drawEllipse(at: Point(x: -20, y: 0), width: 10, height: 10)
 
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+//draw right ear
 
 /*:
  ## Show the Live View
