@@ -100,9 +100,7 @@ for _ in 1 ... 30 {
 }
 p.goToOrigin()
 
-canvas.drawShapesWithFill = true
-canvas.drawShapesWithBorders = false
-canvas.drawEllipse(at: Point(x: 200, y: -200), width: 50, height: 50)
+
 
 
 
@@ -121,6 +119,54 @@ for _ in 1 ... 4 {
 }
 
 
+
+    
+    p.goToOrigin()
+    p.goto(dx: -200, dy: 100)
+    canvas.fillColor = .white
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+    20)
+    p.goto(dx: 20, dy: 0)
+    canvas.fillColor = .black
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height: 20)
+    p.goto(dx: 20, dy: 0)
+    canvas.fillColor = .white
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+    20)
+
+
+p.goToOrigin()
+p.goto(dx: -160, dy: 100)
+canvas.fillColor = .white
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+20)
+p.goto(dx: 20, dy: 0)
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height: 20)
+p.goto(dx: 20, dy: 0)
+canvas.fillColor = .white
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+20)
+
+
+p.goToOrigin()
+p.goto(dx: 40, dy: -180)
+for _ in 1 ... 4 {
+canvas.fillColor = .white
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+20)
+p.goto(dx: 20, dy: 0)
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height: 20)
+p.goto(dx: 20, dy: 0)
+canvas.fillColor = .white
+canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+20)
+}
+
+
+
+    
 /*:
  ## Show the Live View
  Don't see any results?
