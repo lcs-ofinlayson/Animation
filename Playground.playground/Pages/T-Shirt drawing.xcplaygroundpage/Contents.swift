@@ -78,6 +78,49 @@ p.goToOrigin()
 p.goto(dx: 320, dy: 250)
 p.turn(degrees: 90)
 p.addLine(distance: 500)
+p.goToOrigin()
+p.goto(dx: 320, dy: -200)
+p.turn(degrees: 270)
+p.addLine(distance: 40)
+p.turn(degrees: 90)
+p.addLine(distance: 40)
+p.turn(degrees: 90)
+p.addLine(distance: 40)
+p.goToOrigin()
+p.goto(dx: 300, dy: 250)
+p.turn(degrees: 270)
+p.addLine(distance: 500)
+p.turn(degrees: 180)
+p.goto(dx: -20, dy: 0)
+p.addLine(distance: 500)
+for _ in 1 ... 30 {
+    p.turn(degrees: 180)
+    p.goto(dx: -20, dy: 0)
+    p.addLine(distance: 500)
+}
+p.goToOrigin()
+
+canvas.drawShapesWithFill = true
+canvas.drawShapesWithBorders = false
+canvas.drawEllipse(at: Point(x: 200, y: -200), width: 50, height: 50)
+
+
+
+for _ in 1 ... 4 {
+    
+    canvas.fillColor = .white
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+    20)
+    p.goto(dx: 20, dy: 0)
+    canvas.fillColor = .black
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height: 20)
+    p.goto(dx: 20, dy: 0)
+    canvas.fillColor = .white
+    canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
+    20)
+}
+
+
 /*:
  ## Show the Live View
  Don't see any results?
