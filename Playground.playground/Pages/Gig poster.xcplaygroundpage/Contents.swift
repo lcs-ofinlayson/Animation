@@ -16,6 +16,7 @@ let preferredHeight = 600
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import Darwin
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -41,11 +42,11 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+canvas.translate(to: Point(x: canvas.width / 100,
+                           y: canvas.height / 100))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -56,22 +57,18 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+    
+    
+// Making a loop
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
-
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
-
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+for someValue in stride(from: 0, through: 360, by: 1) {
+    canvas.lineColor = Color(hue: someValue,
+                             saturation: 80, brightness: 90,
+                             alpha: 100)
+    
+    canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 200, y: someValue))
+    
+}
 
 /*:
  ## Show the Live View

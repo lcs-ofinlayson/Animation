@@ -91,9 +91,41 @@ p.goto(dx: 300, dy: 250)
 p.turn(degrees: 270)
 p.addLine(distance: 500)
 p.turn(degrees: 180)
+
+
+p.goToOrigin()
+p.thickness = 20
+p.goto(dx: 320, dy: -250)
+p.addLine(distance: 500)
+
+for i in -3 ... 3 {
+    p.goToOrigin()
+    p.penColor = .white
+    p.thickness = 20
+    p.goto(dx: Double(40 * i)+20, dy: -250)
+    p.addLine(distance: 500)
+}
+for i in -3 ... 3 {
+    p.goToOrigin()
+    p.penColor = .black
+    p.thickness = 20
+    p.goto(dx: Double(40 * i), dy: -250)
+    p.addLine(distance: 500)
+}
+    
+p.thickness = 1
 p.goto(dx: -20, dy: 0)
 p.addLine(distance: 500)
-for _ in 1 ... 30 {
+
+for _ in 1 ... 15 {
+    p.penColor = .black
+    p.turn(degrees: 180)
+    p.goto(dx: -20, dy: 0)
+    p.addLine(distance: 500)
+}
+
+for _ in 1 ... 15 {
+    p.penColor = .black
     p.turn(degrees: 180)
     p.goto(dx: -20, dy: 0)
     p.addLine(distance: 500)
@@ -164,9 +196,6 @@ canvas.drawRectangle(at: Point(x:20, y:60), width: 100, height:
 20)
 }
 
-
-
-    
 /*:
  ## Show the Live View
  Don't see any results?
