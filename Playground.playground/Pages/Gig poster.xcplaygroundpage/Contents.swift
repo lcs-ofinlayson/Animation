@@ -60,15 +60,18 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
     
     
 // Making a loop
-
-for someValue in stride(from: 0, through: 360, by: 1) {
-    canvas.lineColor = Color(hue: someValue,
-                             saturation: 80, brightness: 90,
+canvas.highPerformance = true
+for someValue in stride(from: 1, through: 600, by: 1) {
+    
+    canvas.lineColor = Color(hue: 100 ,
+                             saturation: 80, brightness: 0,
                              alpha: 100)
     
-    canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 200, y: someValue))
+    canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 600, y: someValue))
     
 }
+canvas.highPerformance = false
+
 
 /*:
  ## Show the Live View

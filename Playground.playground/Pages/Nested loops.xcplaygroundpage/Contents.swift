@@ -55,23 +55,26 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
-
+canvas.highPerformance = true
 // Begin writing your code below (you can remove the examples shown)
 
 for verticalPosition in stride(from: 25,
-                               through: 500,
+                            through: 500,
                                by: 50) {
-    
     
     for horizontalPosition in stride(from: 25,
                                      through: 500,
                                      by: 50) {
         horizontalPosition
         
+      
+        canvas.fillColor = .green
         
         canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 50, height: 50) }
     
 }
+
+canvas.highPerformance = false
 
 
 
