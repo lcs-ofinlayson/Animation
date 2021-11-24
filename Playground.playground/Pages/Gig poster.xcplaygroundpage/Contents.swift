@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -42,8 +42,8 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 100,
-                           y: canvas.height / 100))
+canvas.translate(to: Point(x: canvas.width / 400,
+                           y: canvas.height / 600))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 50, color: .black)
@@ -70,9 +70,32 @@ for someValue in stride(from: 1, through: 600, by: 1) {
     canvas.drawLine(from: Point(x: 0, y: someValue), to: Point(x: 600, y: someValue))
     
 }
+
+
+for verticalPosition in stride(from: -40, through: 400, by: 40){
+    
+    for horizontalPosition in stride(from: -40, through: 400, by: 40) {
+        canvas.fillColor = Color(hue: 100, saturation: 80, brightness: 80, alpha: 100)
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 36, height: 36)
+     
+        for mValue in stride(from: 1,
+        through: 600,
+        by: 1){
+
+        let currentColor = Color(hue: 100,
+        saturation: 80,
+        brightness: 80,
+        alpha: 100)
+        canvas.lineColor = currentColor
+        canvas.drawLine(from: Point (x: mValue, y: 400), to: Point (x: mValue, y: 600))
+
+        }
+        
+        
+        
+    }
+}
 canvas.highPerformance = false
-
-
 /*:
  ## Show the Live View
  Don't see any results?
