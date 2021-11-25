@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -52,13 +52,13 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
-    
-    
+
+
 // Making a loop
 canvas.highPerformance = true
 for someValue in stride(from: 1, through: 600, by: 1) {
@@ -72,29 +72,48 @@ for someValue in stride(from: 1, through: 600, by: 1) {
 }
 
 
-for verticalPosition in stride(from: -40, through: 400, by: 40){
+
+for verticalPosition in stride(from: 0, through: 400, by: 40){
     
-    for horizontalPosition in stride(from: -40, through: 400, by: 40) {
-        canvas.fillColor = Color(hue: 100, saturation: 80, brightness: 80, alpha: 100)
-        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 36, height: 36)
-     
-        for mValue in stride(from: 1,
-        through: 600,
-        by: 1){
-
-        let currentColor = Color(hue: 100,
-        saturation: 80,
-        brightness: 80,
-        alpha: 100)
-        canvas.lineColor = currentColor
-        canvas.drawLine(from: Point (x: mValue, y: 400), to: Point (x: mValue, y: 600))
-
+    for horizontalPosition in stride(from: 0, through: 400, by: 40) {
+        
+        
+        
+        if verticalPosition == 0 ||
+            horizontalPosition == 0 ||
+            verticalPosition == 400 ||
+            horizontalPosition == 400 ||
+            verticalPosition + horizontalPosition > 400
+        {
+    
+            
+            canvas.fillColor = Color(hue: 100,
+                                     saturation: 54,
+                                     brightness: 72,
+                                     alpha: 100)
+        } else {
+            
+            canvas.fillColor = .white
         }
         
         
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 35, height: 35)
         
+        
+       
     }
+    
 }
+
+
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
+canvas.fillColor = .green
+
+canvas.textColor = .black
+canvas.drawText(message: "pixies", at: Point(x: 10, y: 400))
+
+
+
 canvas.highPerformance = false
 /*:
  ## Show the Live View
@@ -103,7 +122,7 @@ canvas.highPerformance = false
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
