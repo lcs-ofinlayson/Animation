@@ -39,6 +39,25 @@ PlaygroundPage.current.liveView = canvas
  If you do not wish to see a grid, comment out the code on line 48.
  
  */
+//add the ability to draw a tilted rectangle to the canvas structure
+extension Canvas {
+    func drawTiltedRectangle(xPosition: Int, yPosition: Int)  {
+        var rectangleVerticies: [Point] = []
+        rectangleVerticies.append(Point(x: xPosition,
+                                        y: yPosition + 30)) // A
+        
+        rectangleVerticies.append(Point(x: xPosition + 20,
+                                        y: yPosition + 50)) // B
+        rectangleVerticies.append(Point(x: xPosition + 50,
+                                        y: yPosition + 20)) // C
+        rectangleVerticies.append(Point(x: xPosition + 30,
+                                        y: yPosition + 0)) // D
+        canvas.drawCustomShape(with: rectangleVerticies)
+    }
+}
+
+
+
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
 //canvas.translate(to: Point(x: canvas.width / 100,
@@ -62,19 +81,6 @@ canvas.drawEllipse(at: Point(x: xPosition, y: yPosition), width: 5, height: 5)
     
     
     
-    // draw the tilted rectangle
-    canvas.fillColor = .blue
-    var rectangleVerticies: [Point] = []
-    rectangleVerticies.append(Point(x: xPosition,
-                                    y: yPosition + 30)) // A
-    
-    rectangleVerticies.append(Point(x: xPosition + 20,
-                                    y: yPosition + 50)) // B
-    rectangleVerticies.append(Point(x: xPosition + 50,
-                                    y: yPosition + 20)) // C
-    rectangleVerticies.append(Point(x: xPosition + 30,
-                                    y: yPosition + 0)) // D
-    canvas.drawCustomShape(with: rectangleVerticies)
 }
 }
 /*:
