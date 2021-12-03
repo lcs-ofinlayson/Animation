@@ -90,21 +90,64 @@ canvas.drawLine(from: Point(x: 0, y: 575), to: Point(x: 400, y: 575))
 
 
 
-//Draw the arrows
+
+
+// Make a loop for the arrows
+
 canvas.fillColor = .white
 var arrowVerticies: [Point] = []
-arrowVerticies.append(Point(x: 0, y: 0))
-arrowVerticies.append(Point(x: 70, y: 0))
-arrowVerticies.append(Point(x: 70, y: 15))
-arrowVerticies.append(Point(x: 25, y: 15))
-arrowVerticies.append(Point(x: 80, y: 70))
-arrowVerticies.append(Point(x: 70, y: 80))
-arrowVerticies.append(Point(x: 15, y: 25))
-arrowVerticies.append(Point(x: 15, y: 70))
-arrowVerticies.append(Point(x: 0, y: 70))
 
-canvas.drawCustomShape(with: arrowVerticies)
+for xPosition in stride(from: 0, to: 400, by: 80)
+{
 
+
+
+        
+    }
+    canvas.fillColor = .white
+
+    let purple = Color(hue: 306, saturation: 68, brightness: 59, alpha: 100)
+    
+    canvas.fillColor = purple
+    
+    
+    
+var arrowVertices: [Point] = []
+for xPosition in stride(from: 0, to: 400, by: 80)
+{
+
+
+for yPosition in stride(from: 0, to: 400, by: 80) {
+
+
+
+
+    if xPosition == yPosition {
+    canvas.fillColor = .white
+    } else { canvas.fillColor = purple
+    }
+    
+var arrowVertices: [Point] = []
+arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 0))
+arrowVertices.append(Point(x: xPosition + 60, y: yPosition + 0))
+arrowVertices.append(Point(x: xPosition + 60, y: yPosition + 15))
+arrowVertices.append(Point(x: xPosition + 25, y: yPosition + 15))
+
+arrowVertices.append(Point(x: xPosition + 80, y: yPosition + 70))
+arrowVertices.append(Point(x: xPosition + 70, y: yPosition + 80))
+
+arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 25))
+arrowVertices.append(Point(x: xPosition + 15, y: yPosition + 60))
+arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 60))
+arrowVertices.append(Point(x: xPosition + 0, y: yPosition + 0))
+
+canvas.drawCustomShape(with: arrowVertices)
+
+}
+
+}
+
+canvas.drawCustomShape(with: arrowVertices)
 
 
 
@@ -113,7 +156,7 @@ canvas.drawCustomShape(with: arrowVerticies)
 
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .white)
+//canvas.drawAxes(withScale: true, by: 20, color: .white)
 
 
 /*:
