@@ -56,7 +56,7 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 
  */
 
-
+canvas.highPerformance = true
 //Draw Background
 
 canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
@@ -73,11 +73,11 @@ canvas.textColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
 
 canvas.drawText(message: "Drake", at: Point(x: 15, y: 460), size: 65, kerning: 0)
 
-canvas.drawText(message: "August 21 2018", at: Point(x: 300, y: 570), size: 10, kerning: 0)
+canvas.drawText(message: "August 21 2018", at: Point(x: 295, y: 570), size: 12, kerning: 0)
 
-canvas.drawText(message: "Scotiabank arena", at: Point(x: 300, y: 550), size: 10, kerning: 0)
+canvas.drawText(message: "Scotiabank arena", at: Point(x: 295, y: 550), size: 12, kerning: 0)
 
-canvas.drawText(message: "Toronto, ON", at: Point(x: 300, y: 530), size: 10, kerning: 0)
+canvas.drawText(message: "Toronto, ON", at: Point(x: 295, y: 530), size: 12, kerning: 0)
 
 canvas.drawText(message: "ft. Migos", at: Point(x: 20, y: 440), size: 20, kerning: 0)
 
@@ -121,6 +121,42 @@ for verticalPosition in stride(from: 25,
 }
 
 
+//Draw OVO owl
+//canvas.lineColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
+canvas.lineColor = .green
+
+canvas.drawLine(from: Point(x: 140, y: 60), to: Point(x: 140, y: 70))
+canvas.drawLine(from: Point(x: 140, y: 70), to: Point(x: 160, y: 70))
+canvas.drawLine(from: Point(x: 140, y: 60), to: Point(x: 260, y: 60))
+canvas.drawLine(from: Point(x: 260, y: 70), to: Point(x: 260, y: 60))
+canvas.drawLine(from: Point(x: 260, y: 70), to: Point(x: 235, y: 70))
+canvas.drawLine(from: Point(x: 235, y: 70), to: Point(x: 240, y: 100))
+canvas.drawLine(from: Point(x: 240, y: 100), to: Point(x: 245, y: 100))
+canvas.drawLine(from: Point(x: 245, y: 100), to: Point(x: 245, y: 110))
+canvas.drawLine(from: Point(x: 245, y: 110), to: Point(x: 280, y: 80))
+canvas.drawLine(from: Point(x: 280, y: 80), to: Point(x: 310, y: 78))
+canvas.drawLine(from: Point(x: 310, y: 78), to: Point(x: 310, y: 90))
+canvas.drawLine(from: Point(x: 310, y: 90), to: Point(x: 320, y: 80))
+
+
+canvas.drawCurve(from: Point(x: 320, y: 80),
+                 to: Point(x: 220, y: 240),
+                 control1: Point(x: 345, y: 100),
+                 control2: Point(x: 245, y: 280),
+                 showControlPoints: true,
+                 lineWidth: 3,
+                 capStyle: .round)
+
+// Draw inside of left leg
+canvas.drawLine(from: Point(x: 170, y: 65), to: Point(x: 205, y: 100))
+canvas.drawLine(from: Point(x: 205, y: 100), to: Point(x: 215, y: 95))
+canvas.drawLine(from: Point(x: 215, y: 95), to: Point(x: 225, y: 115))
+canvas.drawLine(from: Point(x: 160, y: 70), to: Point(x: 175, y: 70))
+
+
+
+
+
 // Curve example
 canvas.drawAxes(withScale: true, by: 50, color: .black)
 canvas.lineColor = .black
@@ -132,7 +168,7 @@ canvas.drawCurve(from: Point(x: 100, y: 250),
                  lineWidth: 2,
                  capStyle: .round)
 
-
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?
