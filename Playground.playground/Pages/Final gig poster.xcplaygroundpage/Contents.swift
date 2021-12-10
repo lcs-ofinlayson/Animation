@@ -44,8 +44,7 @@ PlaygroundPage.current.liveView = canvas
 //canvas.translate(to: Point(x: canvas.width / 2,
                         //   y: canvas.height / 2))
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
+
 
 /*:
  ## Add your code
@@ -148,27 +147,52 @@ canvas.drawCurve(from: Point(x: 320, y: 80),
                  capStyle: .round)
 
 // Draw inside of left leg
-canvas.drawLine(from: Point(x: 170, y: 65), to: Point(x: 205, y: 100))
+canvas.drawLine(from: Point(x: 170, y: 70), to: Point(x: 205, y: 100))
 canvas.drawLine(from: Point(x: 205, y: 100), to: Point(x: 215, y: 95))
-canvas.drawLine(from: Point(x: 215, y: 95), to: Point(x: 225, y: 115))
 canvas.drawLine(from: Point(x: 160, y: 70), to: Point(x: 175, y: 70))
+canvas.drawLine(from: Point(x: 185, y: 70), to: Point(x: 217, y: 100))
+canvas.drawLine(from: Point(x: 205, y: 100), to: Point(x: 190, y: 135))
+canvas.drawLine(from: Point(x: 218, y: 98), to: Point(x: 223, y: 103))
 
 
+//Draw inside of right leg
+canvas.drawLine(from: Point(x: 225, y: 72), to: Point(x: 230, y: 100))
+canvas.drawLine(from: Point(x: 235, y: 70), to: Point(x: 225, y: 70))
+canvas.drawLine(from: Point(x: 230, y: 100), to: Point(x: 222, y: 100))
+canvas.drawLine(from: Point(x: 222, y: 100), to: Point(x: 210, y: 120))
 
+canvas.drawLine(from: Point(x: 162, y: 70), to: Point(x: 242, y: 70))
 
-
-// Curve example
-canvas.drawAxes(withScale: true, by: 50, color: .black)
-canvas.lineColor = .black
-canvas.drawCurve(from: Point(x: 100, y: 250),
-                 to: Point(x: 250, y: 250),
-                 control1: Point(x: 75, y: 300),
-                 control2: Point(x: 275, y: 300),
+//Draw front wing
+canvas.drawCurve(from: Point(x: 210, y: 120),
+                 to: Point(x: 130, y: 300),
+                 control1: Point(x: 100, y: 200),
+                 control2: Point(x: 110, y: 280),
                  showControlPoints: true,
-                 lineWidth: 2,
+                 lineWidth: 3,
                  capStyle: .round)
 
+//Draw head
+canvas.drawLine(from: Point(x: 130, y: 300), to: Point(x: 140, y: 290))
+canvas.drawLine(from: Point(x: 140, y: 290), to: Point(x: 190, y: 290))
+canvas.drawLine(from: Point(x: 190, y: 290), to: Point(x: 198, y: 300))
+
+canvas.drawCurve(from: Point(x: 198, y: 300),
+                 to: Point(x: 220, y: 240),
+                 control1: Point(x: 218, y: 288),
+                 control2: Point(x: 230, y: 250),
+                 showControlPoints: true,
+                 lineWidth: 3,
+                 capStyle: .round)
+
+
+
+
 canvas.highPerformance = false
+
+
+// Show a grid
+canvas.drawAxes(withScale: true, by: 20, color: .black)
 /*:
  ## Show the Live View
  Don't see any results?
