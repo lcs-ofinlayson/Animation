@@ -58,7 +58,7 @@ PlaygroundPage.current.liveView = canvas
 canvas.highPerformance = true
 //Draw Background
 
-canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 60, alpha: 100)
+canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 80, alpha: 100)
 
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
 
@@ -68,7 +68,7 @@ canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
 // Write text
 
-canvas.textColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
+canvas.textColor = Color(hue: 225, saturation: 57, brightness: 58, alpha: 100)
 
 canvas.drawText(message: "Drake", at: Point(x: 15, y: 460), size: 65, kerning: 0)
 
@@ -226,8 +226,7 @@ canvas.drawCurve(from: Point(x: 220, y: 240),
 canvas.highPerformance = false
 
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+
 /*:
  ## Show the Live View
  Don't see any results?
