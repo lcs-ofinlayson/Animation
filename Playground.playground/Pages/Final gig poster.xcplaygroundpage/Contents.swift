@@ -58,7 +58,7 @@ PlaygroundPage.current.liveView = canvas
 canvas.highPerformance = true
 //Draw Background
 
-canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
+canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 60, alpha: 100)
 
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 400)
 
@@ -89,15 +89,15 @@ canvas.fillColor = Color(hue: 41, saturation: 64, brightness: 71, alpha: 100)
 for verticalPosition in stride(from: 25,
                             through: 400,
                                by: 50) {
-    
+
     for horizontalPosition in stride(from: 25,
                                      through: 400,
                                      by: 50) {
         horizontalPosition
-        
-      
-        
-        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 45, height: 45) }
+
+
+
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 48, height: 48) }
 
 
 
@@ -106,23 +106,22 @@ for verticalPosition in stride(from: 25,
     for verticalPosition in stride(from: 25,
                                 through: 400,
                                    by: 50) {
-        
+
         for horizontalPosition in stride(from: 25,
                                          through: 400,
                                          by: 50) {
             horizontalPosition
-            
-          
-            
-            canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 45, height: 45) }
+
+
+
+            canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 48, height: 48) }
 
     }
 }
 
 
 //Draw OVO owl
-//canvas.lineColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
-canvas.lineColor = .green
+canvas.lineColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
 
 canvas.drawLine(from: Point(x: 140, y: 60), to: Point(x: 140, y: 70))
 canvas.drawLine(from: Point(x: 140, y: 70), to: Point(x: 160, y: 70))
@@ -142,7 +141,7 @@ canvas.drawCurve(from: Point(x: 320, y: 80),
                  to: Point(x: 220, y: 240),
                  control1: Point(x: 345, y: 100),
                  control2: Point(x: 245, y: 280),
-                 showControlPoints: true,
+                 showControlPoints: false,
                  lineWidth: 3,
                  capStyle: .round)
 
@@ -168,7 +167,7 @@ canvas.drawCurve(from: Point(x: 210, y: 120),
                  to: Point(x: 130, y: 300),
                  control1: Point(x: 100, y: 200),
                  control2: Point(x: 110, y: 280),
-                 showControlPoints: true,
+                 showControlPoints: false,
                  lineWidth: 3,
                  capStyle: .round)
 
@@ -180,12 +179,48 @@ canvas.drawLine(from: Point(x: 190, y: 290), to: Point(x: 198, y: 300))
 canvas.drawCurve(from: Point(x: 198, y: 300),
                  to: Point(x: 220, y: 240),
                  control1: Point(x: 218, y: 288),
-                 control2: Point(x: 230, y: 250),
-                 showControlPoints: true,
+                 control2: Point(x: 225, y: 250),
+                 showControlPoints: false,
                  lineWidth: 3,
                  capStyle: .round)
 
 
+//Draw middle wing
+canvas.drawCurve(from: Point(x: 220, y: 240),
+                 to: Point(x: 310, y: 85),
+                 control1: Point(x: 200, y: 200),
+                 control2: Point(x: 280, y: 70),
+                 showControlPoints: false,
+                 lineWidth: 3,
+                 capStyle: .round)
+
+
+
+//Draw eyes
+canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
+
+canvas.drawEllipse(at: Point(x: 147, y: 260), width: 30, height: 30, borderWidth: 3)
+canvas.drawEllipse(at: Point(x: 187, y: 260), width: 30, height: 30, borderWidth: 3)
+canvas.drawLine(from: Point(x: 177, y: 260), to: Point(x: 170, y: 230))
+canvas.drawLine(from: Point(x: 158, y: 260), to: Point(x: 170, y: 230))
+
+canvas.fillColor = Color(hue: 41, saturation: 64, brightness: 71, alpha: 100)
+canvas.drawEllipse(at: Point(x: 147, y: 260), width: 20, height: 20, borderWidth: 1)
+canvas.drawEllipse(at: Point(x: 187, y: 260), width: 20, height: 20, borderWidth: 1)
+
+canvas.fillColor = Color(hue: 225, saturation: 57, brightness: 48, alpha: 100)
+
+canvas.drawEllipse(at: Point(x: 147, y: 260), width: 17, height: 17, borderWidth: 3)
+canvas.drawEllipse(at: Point(x: 187, y: 260), width: 17, height: 17, borderWidth: 3)
+
+
+canvas.drawCurve(from: Point(x: 220, y: 240),
+                 to: Point(x: 119, y: 245),
+                 control1: Point(x: 220, y: 200),
+                 control2: Point(x: 120, y: 180),
+                 showControlPoints: false,
+                 lineWidth: 3,
+                 capStyle: .round)
 
 
 canvas.highPerformance = false
